@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-File: pythonTime.py
+File: pythonTime_tester.py
 
 Author: Max Maleno
 
-Last Updated: 6/13/19
+Last Updated: 6/16/19
 
 """
 
@@ -62,5 +62,8 @@ def getTimeToEvent(eventUnixTime):
 
     return [days_output, hours_output, minutes_output, seconds_output]
 
-# website to find UNIX time: https://www.epochconverter.com/
-print(getTimeToEvent(eventUnixTime = 1567904460))
+#while(True):
+#    print(getTimeToEvent(eventUnixTime = 1567904460))
+#    time.sleep(0.1)
+
+while(True): getTimeToEvent(eventUnixTime = 1567904460)
