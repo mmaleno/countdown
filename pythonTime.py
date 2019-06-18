@@ -62,4 +62,5 @@ def getTimeToEvent(eventUnixTime):
 
     return [days_output, hours_output, minutes_output, seconds_output]
 
+# website to find UNIX time: https://www.epochconverter.com/
 print(getTimeToEvent(eventUnixTime = 1567904460))
