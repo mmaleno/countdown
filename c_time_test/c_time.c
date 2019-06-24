@@ -69,7 +69,10 @@ int * getDigits(int * times)
             3		        8	        	i+5
     
     */
-    for(int i = 0; i<=3; i++)
+
+    int i; // added outside for loop for compatibility with older compilers 
+
+    for(i = 0; i<=3; i++)
     {
         digits[2*i+1] = times[i] / 10;  // extract 10s place
         digits[2*i+2] = times[i] % 10;  // extract 1s place
@@ -81,7 +84,11 @@ int * getDigits(int * times)
 // Useful delay function to make console prints easier to read
 void delay()
 {
-    for (int c = 1; c <= 10000; c++) for (int d = 1; d <= 10000; d++) {}
+
+    int c; // added outside for loop for compatibility with older compilers
+    int d; // added outside for loop for compatibility with older compilers
+
+    for (c = 1; c <= 10000; c++) for (d = 1; d <= 10000; d++) {}
 }
 
 // Outputs an int array of 1s (HIGHs) and 0s (LOWs) for each segment for the inputted int digit
@@ -133,7 +140,7 @@ int main()
     {
         times = getRemainingTime(eventUnixTime);
         digits = getDigits(times);
-        delay();                        // for readablity
+        //delay();                        // for readablity
         ///*
         printf("Unix Difference: %d, ", times[4]);
         printf("Days: %d (hundreds %d - tens %d - ones %d) ; ", times[0], digits[0], digits[1], digits[2]);
