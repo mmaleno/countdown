@@ -3,7 +3,7 @@
 *
 * Author: Max Maleno
 *
-* Last Updated: 6/18/19
+* Last Updated: 6/24/19
 *
 * Description: Main development file for wet seasdon countdown timer.
 *
@@ -94,19 +94,23 @@ void delay()
 // Outputs an int array of 1s (HIGHs) and 0s (LOWs) for each segment for the inputted int digit
 int * digitToSegments(int digit)
 {
-    // a-e correspond to a segment              a    b    c    d    e    f    g
-    //                                          |    |    |    |    |    |    |
-    static int zeroSegments[7]          =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int oneSegments[7]           =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int twoSegments[7]           =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int threeSegments[7]         =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int fourSegments[7]          =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int fiveSegments[7]          =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int sixSegments[7]           =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int sevenSegments[7]         =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int eightSegments[7]         =   {   1,   0,   1,   0,   1,   0,   1   };
-    static int nineSegments[7]          =   {   1,   0,   1,   0,   1,   0,   1   };
+    // a-g correspond to a segment              a    b    c    d    e    f    g
+    // numbers taken from e155 lab2             |    |    |    |    |    |    |
+    static int zeroSegments[7]          =   {   0,   0,   0,   0,   0,   0,   1   };
+    static int oneSegments[7]           =   {   1,   0,   0,   1,   1,   1,   1   };
+    static int twoSegments[7]           =   {   0,   0,   1,   0,   0,   1,   0   };
+    static int threeSegments[7]         =   {   0,   0,   0,   0,   1,   1,   0   };
+    static int fourSegments[7]          =   {   1,   0,   0,   1,   1,   0,   0   };
+    static int fiveSegments[7]          =   {   0,   1,   0,   0,   1,   0,   0   };
+    static int sixSegments[7]           =   {   0,   1,   0,   0,   0,   0,   0   };
+    static int sevenSegments[7]         =   {   0,   0,   0,   1,   1,   1,   1   };
+    static int eightSegments[7]         =   {   0,   0,   0,   0,   0,   0,   0   };
+    static int nineSegments[7]          =   {   0,   0,   0,   1,   1,   0,   0   };
 
+    // below in progress
+    int numCharacters = 9;
+    char topLine[2*(3*numCharacters)-1];
+    
     // Output the corresponding array based on the input int
     if (digit == 0) return zeroSegments;
     if (digit == 1) return oneSegments;
@@ -140,7 +144,7 @@ int main()
     {
         times = getRemainingTime(eventUnixTime);
         digits = getDigits(times);
-        //delay();                        // for readablity
+        delay();                        // for readablity
         ///*
         printf("Unix Difference: %d, ", times[4]);
         printf("Days: %d (hundreds %d - tens %d - ones %d) ; ", times[0], digits[0], digits[1], digits[2]);
