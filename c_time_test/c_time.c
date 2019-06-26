@@ -82,6 +82,7 @@ int * getDigits(int * times)
 }
 
 // Useful delay function to make console prints easier to read
+// **Delays for different times depending on clock of machine.** //
 void delay()
 {
 
