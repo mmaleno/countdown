@@ -96,8 +96,8 @@ void delay()
 
     int c; // added outside for loop for compatibility with older compilers
     int d; // added outside for loop for compatibility with older compilers
-    if (OS_NAME == "linux") for (c = 1; c <= 10000; c++) for (d = 1; d <= 10000; d++) {}
-    else for (c = 1; c <= 5000; c++) for (d = 1; d <= 5000; d++) {}
+    if (OS_NAME == "linux") for (c = 1; c <= 5000; c++) for (d = 1; d <= 5000; d++) {}
+    else for (c = 1; c <= 10000; c++) for (d = 1; d <= 10000; d++) {}
 }
 
 // Outputs an int array of 1s (HIGHs) and 0s (LOWs) for each segment for the inputted int digit
@@ -154,14 +154,14 @@ int main()
         times = getRemainingTime(eventUnixTime);
         digits = getDigits(times);
         delay();                        // for readablity
-        /*
+        ///*
         printf("Unix Difference: %d, ", times[4]);
         printf("Days: %d (hundreds %d - tens %d - ones %d) ; ", times[0], digits[0], digits[1], digits[2]);
         printf("Hours: %d, (tens %d - ones %d) ; ", times[1], digits[3], digits[4]);
         printf("Minutes: %d, (tens %d - ones %d) ; ", times[2], digits[5], digits[6]);
         printf("Seconds: %d (tens %d - ones %d) ; \n", times[3], digits[7], digits[8]);
-        */
-        printf("%s\n", OS_NAME);
+        //*/
+        //printf("%s\n", OS_NAME);
         //selectedDigit = digitToSegments(10);
         //printf("%d %d %d %d\n", selectedDigit[0], selectedDigit[3], selectedDigit[4], selectedDigit[5]);
     }
