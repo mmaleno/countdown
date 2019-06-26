@@ -96,8 +96,8 @@ void delay()
 
     int c; // added outside for loop for compatibility with older compilers
     int d; // added outside for loop for compatibility with older compilers
-
-    for (c = 1; c <= 10000; c++) for (d = 1; d <= 10000; d++) {}
+    if (OS_NAME == "linux") for (c = 1; c <= 10000; c++) for (d = 1; d <= 10000; d++) {}
+    else for (c = 1; c <= 5000; c++) for (d = 1; d <= 5000; d++) {}
 }
 
 // Outputs an int array of 1s (HIGHs) and 0s (LOWs) for each segment for the inputted int digit
