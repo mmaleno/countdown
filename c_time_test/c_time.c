@@ -81,7 +81,8 @@ int * getDigits(int * times)
     return digits;
 }
 
-// Useful delay function to make console prints easier to read
+// Useful delay function to make console prints easier to read.
+// **Delays for different times depending on clock of machine.** //
 void delay()
 {
 
@@ -144,7 +145,7 @@ int main()
     {
         times = getRemainingTime(eventUnixTime);
         digits = getDigits(times);
-        delay();                        // for readablity
+        //delay();                        // for readablity
         ///*
         printf("Unix Difference: %d, ", times[4]);
         printf("Days: %d (hundreds %d - tens %d - ones %d) ; ", times[0], digits[0], digits[1], digits[2]);
