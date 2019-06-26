@@ -13,6 +13,14 @@
 #include <stdlib.h>
 #include <time.h>           // to get the current system UNIX time
 
+// graciously adapted from
+// https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive
+#if defined(__linux__)
+    #define OS_NAME "linux"
+#elif defined(__APPLE__)
+    #define OS_NAME "mac"
+#endif
+
 // Outputs an int array of time divisions until unsigned long eventUnixTime
 // Website to find UNIX time: https://www.epochconverter.com/
 // Output format: { days, hours, minutes, seconds, diffUnixTime }
@@ -146,13 +154,14 @@ int main()
         times = getRemainingTime(eventUnixTime);
         digits = getDigits(times);
         delay();                        // for readablity
-        ///*
+        /*
         printf("Unix Difference: %d, ", times[4]);
         printf("Days: %d (hundreds %d - tens %d - ones %d) ; ", times[0], digits[0], digits[1], digits[2]);
         printf("Hours: %d, (tens %d - ones %d) ; ", times[1], digits[3], digits[4]);
         printf("Minutes: %d, (tens %d - ones %d) ; ", times[2], digits[5], digits[6]);
         printf("Seconds: %d (tens %d - ones %d) ; \n", times[3], digits[7], digits[8]);
-        //*/
+        */
+        printf("%s\n", OS_NAME);
         //selectedDigit = digitToSegments(10);
         //printf("%d %d %d %d\n", selectedDigit[0], selectedDigit[3], selectedDigit[4], selectedDigit[5]);
     }
