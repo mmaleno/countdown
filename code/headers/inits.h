@@ -1,15 +1,23 @@
-// inits.h
-// Created by Max Maleno, mmaleno@hmc.edu
-// Last Modified 06/26/19
-// Header file with init functions for c_time.c
-// Adopted from my lab6_inits.h from E155 FA18
-// Almost exclusively relevant to an RPi Model 3 B+
+/*
+*   Filename:   inits.h
+*   Creator:    Max Maleno
+*   Contact:    mmaleno@hmc.edu
+*   Updated:    07/07/19
+*   
+*   Notes:
+*   - Header file with init functions for RPi
+*   - Adopted from Max's lab6_inits.h written for HMC's E155 FA18
+*   - Warning: IO files written for a RPi Model 3B (BCM 2837).
+*     IO functionality not guaranteed for other RPi generations or CPUs.
+*/
 
 #include <sys/mman.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include "defs.h"
+
+/********************* Start from E155 *********************/
 
 // Initiate GPIO reg map and assign base address to gpio
 // From lab5_starter.c
@@ -68,3 +76,20 @@ void sysTimerInit() {
 
 	sysTimer = (volatile unsigned *)reg_map_timer;
 }
+
+/********************* End from E155 *********************/
+
+/********************* Start from countdown *********************/
+
+// If we are using an RPi, run RPi init functions
+void machineInit() {
+    
+	// Run RPi-specific inits if we are running on a RPi
+    if (OS_NAME == "linux")
+    {
+        pioInit();
+        sysTimerInit();
+    }
+}
+
+/********************* End from countdown *********************/

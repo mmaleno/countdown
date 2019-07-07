@@ -1,9 +1,15 @@
-// delays.h
-// Created by Max Maleno, mmaleno@hmc.edu
-// Last Modified 06/26/19
-// Header file with delay functions for c_time.c
-// Adopted from my lab6_delays.h from E155 FA18
-// Almost exclusively relevant to an RPi Model 3 B+
+/*
+*   Filename:   delays.h
+*   Creator:    Max Maleno
+*   Contact:    mmaleno@hmc.edu
+*   Updated:    07/07/19
+*   
+*   Notes:
+*   - Header file with delay functions for countdown_main.c
+*   - Adopted from Max's lab6_delays.h written for HMC's E155 FA18
+*   - Warning: IO files written for a RPi Model 3B (BCM 2837).
+*     IO functionality not guaranteed for other RPi generations or CPUs.
+*/
 
 #include "defs.h"
 

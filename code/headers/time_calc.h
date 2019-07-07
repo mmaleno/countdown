@@ -1,7 +1,12 @@
-// time_calc.h
-// Created by Max Maleno, mmaleno@hmc.edu
-// Last Modified 06/26/19
-// Header file with time-based functions for c_time.c
+/*
+*   Filename:   time_calc.h
+*   Creator:    Max Maleno
+*   Contact:    mmaleno@hmc.edu
+*   Updated:    07/07/19
+*   
+*   Notes:
+*   - Header file with time-based functions for countdown_main.c
+*/
 
 #include "time.h"           // to get the current system UNIX time
 

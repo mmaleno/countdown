@@ -1,7 +1,12 @@
-// digits.h
-// Created by Max Maleno, mmaleno@hmc.edu
-// Last Modified 06/26/19
-// Header file with digit-related functions for c_time.c
+/*
+*   Filename:   digits.h
+*   Creator:    Max Maleno
+*   Contact:    mmaleno@hmc.edu
+*   Updated:    07/07/19
+*   
+*   Notes:
+*   - Header file with digit-related functions for countdown_main.c
+*/
 
 // Outputs an int array of each individual digit from all time divisions.
 // Takes int array times of the value of each time division.
