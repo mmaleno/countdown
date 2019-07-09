@@ -25,7 +25,7 @@
 
 #if defined(__linux__)
     #include "headers/delays.h"
-    #include "headers/simple_IO.h"
+    #include "headers/simple_io.h"
 #endif
 
 #include "headers/defs.h"
