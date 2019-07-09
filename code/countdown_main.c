@@ -2,7 +2,7 @@
 *   Filename:   countdown_main.c
 *   Creator:    Max Maleno
 *   Contact:    mmaleno@hmc.edu
-*   Updated:    07/07/19
+*   Updated:    07/08/19
 *   
 *   Notes:
 *   - Main development file for wet season countdown timer.
@@ -10,22 +10,18 @@
 *     IO functionality not guaranteed for other RPi generations or CPUs.
 */
 
-/*  Lastest commit:
-    - Cleaned up file decription comments
-    - Added TODO field in countdown_main.c
-    - Added commit field in countdown_main.c
-    - Moved a ton of files around
-    - Renamed unclear filenames
-    - Restructured machine-specific inits and includes
+/*  Latest commit:
+    - FINALLY started connecting hardware to pi and running it
+    - changed "Lastest" to "Latest" above ;/
 */
 
 /*  TODO:
-    - run this new version on pi
+    - 
 */
 
 #if defined(__linux__)
     #include "headers/delays.h"
-    #include "headers/simple_io.h"
+    #include "headers/test_functions.h"
 #endif
 
 #include "headers/defs.h"
@@ -39,6 +35,9 @@ int main()
 {
     // Run init functions based on which machine is running
     machineInit();
+
+    // run test function
+    test_main();
     
     // Wet Season's UNIX time (Sept 07 2019 US-Pacific 18:01 or 06:01pm)
     // Website to find UNIX time: https://www.epochconverter.com/
